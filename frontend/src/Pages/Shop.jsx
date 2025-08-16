@@ -11,16 +11,17 @@ const Shop = () => {
   const [newcollection, setNewCollection] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('http://localhost:4000/popularinwomen') 
+    fetch(`${process.env.VITE_REACT_APP_BACKEND_BASEURL}/popularinwomen`) 
             .then((res) => res.json()) 
             .then((data) => setPopular(data))
-    fetch('http://localhost:4000/newcollections') 
+    fetch(`${process.env.VITE_REACT_APP_BACKEND_BASEURL}/newcollections`) 
             .then((res) => res.json()) 
             .then((data) => setNewCollection(data))
     }
 
     useEffect(() => {
       fetchInfo();
+
     }, [])
 
 

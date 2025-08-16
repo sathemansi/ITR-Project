@@ -9,7 +9,7 @@ const ShopCategory = (props) => {
   const [allproducts, setAllProducts] = useState([]);
 
   const fetchInfo = () => { 
-    fetch('http://localhost:4000/allproducts') 
+    fetch(`${process.env.VITE_REACT_APP_BACKEND_BASEURL}/allproducts`) 
             .then((res) => res.json()) 
             .then((data) => setAllProducts(data))
     }
